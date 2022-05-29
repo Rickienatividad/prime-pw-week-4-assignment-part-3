@@ -35,7 +35,7 @@ basket.push('grapes','acorns','cereal','potatoes','peppers');
 console.log(basket);
 
 const maxItems = 5;
-function isFull(basket){
+function isFull(array){
     if(basket.length < maxItems){
         return false;
     }else{
@@ -44,14 +44,21 @@ function isFull(basket){
 }
 
 function addItemUpdate(item){
-    if(isFull){
-        console.log('too full to add',item);
+    if(isFull(basket)){
+        console.log('basket too full to add',item);
         return false;
-    } else if(isFull == false){
+    } else if(isFull(basket) == false){
         basket.push(item);
+        console.log('adding', item);
         console.log(basket);
         return true;
     }
 }
 addItemUpdate('lettuce');
 console.log(basket);
+basket.pop();
+console.log(basket);
+addItemUpdate('figs');
+
+
+
